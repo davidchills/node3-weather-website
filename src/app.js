@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 //console.log(__filename)
 
 const app = express()
+// Setup to work with Heroku with a default port for local development.
 const port = process.env.PORT || 3000
 
 // Define paths for express config
@@ -15,7 +16,7 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
-// Setup handlebars and views location
+// Setup handlebars and views location.
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
